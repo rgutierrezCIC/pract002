@@ -1,4 +1,4 @@
-package es.cic.pract002;
+package es.cic.pract002.model;
 
 import java.util.ArrayList;
 import java.util.List;

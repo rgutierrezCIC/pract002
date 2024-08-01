@@ -1,4 +1,4 @@
-package es.cic.pract002;
+package es.cic.pract002.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

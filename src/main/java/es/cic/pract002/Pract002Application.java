@@ -12,15 +12,15 @@ public class Pract002Application {
 		SpringApplication.run(Pract002Application.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner commandLineRunner(ExpedienteRepository expedienteRepository) {
-		return args -> {
+	// @Bean
+	// public CommandLineRunner commandLineRunner(ExpedienteRepository expedienteRepository) {
+	// 	return args -> {
 
-			Expediente expediente = new Expediente(); 
-			expediente.setNombre("Juan");
-			expediente.setDocumentos(null);
-			expedienteRepository.save(expediente);
+	// 		Expediente expediente = new Expediente(); 
+	// 		expediente.setNombre("Juan");
+	// 		expediente.setDocumentos(null);
+	// 		expedienteRepository.save(expediente);
 
-		};
-	}
+	// 	};
+	// }
 }
