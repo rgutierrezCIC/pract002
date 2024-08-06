@@ -9,25 +9,27 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Expediente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
+    @Size(max = 10)
     private String nombre;
 
-    @OneToMany(mappedBy = "expediente", cascade = {CascadeType.ALL, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "expediente", 
+            cascade = { CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE }, orphanRemoval = true)
     private List<Documento> documentos = new ArrayList<>();
 
-    // getters y setters 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

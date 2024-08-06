@@ -1,6 +1,5 @@
 package es.cic.pract002.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,7 @@ public class ExpedienteService {
     
     @Transactional(readOnly = true)
     public Expediente leer(long id){
-        return expedienteRepository.findById(id).orElseThrow(() -> new RuntimeException("No encontré nada"));
+        return expedienteRepository.findById(id).orElseThrow(() -> new NoEncontradoException(String.format("No lo encontré el %d chaval@", id), id));
     }
     
     
